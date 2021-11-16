@@ -29,7 +29,15 @@ const handleUserInput = function (key) {
     if (key === 'd') {
       conn.write("Move: right"); 
     }
-
+    if (key === 't') {
+      conn.write("Say: Tough luck!")
+    }
+    if (key === 'g') {
+      conn.write("Say: get REKT")
+    }
+    if (key === 'y') {
+      conn.write("Say: You feelin' lucky?")
+    }
 }; 
 
 

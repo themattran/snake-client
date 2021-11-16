@@ -12,15 +12,19 @@ const connect = function () {
 
   conn.on("connect", () => {
     console.log('connection successful'); 
+    //conn.write(`Name: KEV`);
+    setInterval(() => {
+      conn.write(`Move: right`);
+    }, 50)
+    setInterval(() => {
+      conn.write(`Move: up`);
+    }, 50)
   })
   
   conn.on("data", (data) => {
     console.log('Snek says:', data);
   })
 
-  conn.on("connect", () => {
-    conn.write(`Name: Kevin`)
-  })
   return conn;
 };
 

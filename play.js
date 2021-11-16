@@ -13,12 +13,20 @@ const connect = function () {
   conn.on("connect", () => {
     console.log('connection successful'); 
     //conn.write(`Name: KEV`);
+    
     setInterval(() => {
       conn.write(`Move: right`);
     }, 50)
+
     setInterval(() => {
-      conn.write(`Move: up`);
-    }, 50)
+      conn.write(`Move: down`);
+    }, 100)
+
+    setInterval(() => {
+      conn.write(`Move: right`);
+    }, 250)
+
+
   })
   
   conn.on("data", (data) => {
@@ -28,9 +36,28 @@ const connect = function () {
   return conn;
 };
 
+const setupInput = function () {
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding("utf8");
+  stdin.resume();
+  stdin.on("data", handleUserInput);
+  return stdin;
+};
+
+const handleUserInput = function (key) {
+
+    if (key === '\u0003') {
+      process.exit(); 
+    }
+
+
+}; 
+
 // console.log("Connecting ...");
 // connect();
 
 module.exports = {
-  connect
+  connect,
+  setupInput
 }; 

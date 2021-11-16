@@ -1,4 +1,6 @@
-const {connect} = require('./play'); 
+const {connect, setupInput} = require('./play'); 
 
 connect(); 
+setupInput(); 
+
 

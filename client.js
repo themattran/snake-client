@@ -16,15 +16,15 @@ const connect = function () {
     
     setInterval(() => {
       conn.write(`Move: right`);
-    }, 50)
+    }, 1000)
 
     setInterval(() => {
       conn.write(`Move: down`);
-    }, 100)
+    }, 1000)
 
     setInterval(() => {
       conn.write(`Move: right`);
-    }, 250)
+    }, 2500)
 
 
   })

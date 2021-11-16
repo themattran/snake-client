@@ -11,7 +11,8 @@ const connect = function () {
 
   conn.on("connect", () => {
     console.log('connection successful');   
-    conn.write(`Name: MET`);
+    conn.write('Name: MET');
+    //conn.write('Move: up') // will move snake up one unit upon connection to server
   })
   
   conn.on("data", (data) => {
